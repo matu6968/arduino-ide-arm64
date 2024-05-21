@@ -10,3 +10,5 @@ Build instructions:
 3. Make sure any electron-builder prebuilt packages are ARM64 compatible (like fpm, install using gem install fpm then search for fpm in root dir and copy the dir of found fpm dir that you installed to the electron-builder directory) so that the build does not fail with a incompatible binary error
 4. build using the usual commands listed in build guide in ["Build From Source"](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#build-from-source)
 5. To build a DEB package, simply add --target=deb listed in section ["Bundle the Application"](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#bundle-the-application) (yarn --cwd electron-app package --target=deb)
+
+[FAQ](https://github.com/matu6968/arduino-ide-arm64/wiki/faq)
