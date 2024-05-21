@@ -1,7 +1,7 @@
 # Arduino IDE 2.x for ARM64
 This repo contains Arduino IDE version 2.x compiled for ARM64 devices (such as for Raspberry Pi devices)
 Build requirements:
-- any ARM64 device with atleast 8 GB of RAM + 3 GB swap if running a heavier distro or with apps open
+- any ARM64 device running Debian or Raspberry Pi OS (cannot be Ubuntu due to compiling issues) with atleast 8 GB of RAM + 3 GB swap if running a heavier distro or with apps open
 - build dependencies listed on the [git repo](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#Prerequisites)
 
 Build instructions:
