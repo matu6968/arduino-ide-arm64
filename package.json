@@ -6,34 +6,26 @@
   "license": "AGPL-3.0-or-later",
   "main": "./src-gen/backend/electron-main.js",
   "dependencies": {
-    "@theia/core": "^1.49.0",
-    "@theia/debug": "^1.49.0",
-    "@theia/editor": "^1.49.0",
+    "@theia/core": "1.41.0",
+    "@theia/debug": "1.41.0",
+    "@theia/editor": "1.41.0",
     "@theia/electron": "1.41.0",
-    "@theia/filesystem": "^1.49.0",
-    "@theia/keymaps": "^1.49.0",
-    "@theia/markers": "1.49.0",
-    "@theia/messages": "^1.49.0",
-    "@theia/monaco": "^1.49.0",
-    "@theia/navigator": "^1.49.0",
-    "@theia/outline-view": "1.49.0",
-    "@theia/output": "1.49.0",
-    "@theia/plugin-ext": "^1.49.0",
-    "@theia/plugin-ext-vscode": "^1.49.0",
-    "@theia/preferences": "^1.49.0",
-    "@theia/scm": "1.49.0",
-    "@theia/search-in-workspace": "1.49.0",
-    "@theia/terminal": "^1.49.0",
-    "@theia/typehierarchy": "1.49.0",
-    "@theia/workspace": "^1.49.0",
+    "@theia/filesystem": "1.41.0",
+    "@theia/keymaps": "1.41.0",
+    "@theia/messages": "1.41.0",
+    "@theia/monaco": "1.41.0",
+    "@theia/navigator": "1.41.0",
+    "@theia/plugin-ext": "1.41.0",
+    "@theia/plugin-ext-vscode": "1.41.0",
+    "@theia/preferences": "1.41.0",
+    "@theia/terminal": "1.41.0",
+    "@theia/workspace": "1.41.0",
     "arduino-ide-extension": "2.3.3",
-    "keytar": "^7.9.0",
-    "lerna": "6.4.1",
-    "theia": "^2.1.2"
+    "nsfw-watcher": "^1.0.1"
   },
   "devDependencies": {
-    "@theia/cli": "^1.49.0",
     "7zip-min": "^1.4.4",
+    "@theia/cli": "1.41.0",
     "chmodr": "^1.2.0",
     "compression-webpack-plugin": "^9.0.0",
     "copy-webpack-plugin": "^8.1.1",
@@ -143,7 +135,8 @@
         "msi",
         "nsis",
         "zip"
-      ]
+      ],
+      "sign": "./scripts/windowsCustomSign.js"
     },
     "mac": {
       "darkModeSupport": true,
@@ -157,8 +150,9 @@
     },
     "linux": {
       "target": [
-        "deb",
-        "zip"
+        "zip",
+        "AppImage",
+        "deb"
       ],
       "category": "Development",
       "icon": "resources/icons"
