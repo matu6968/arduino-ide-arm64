@@ -1,0 +1,31 @@
+diff --git a/electron-app/package.json b/electron-app/package.json
+index 774fe56b..93144149 100644
+--- a/electron-app/package.json
++++ b/electron-app/package.json
+@@ -2,6 +2,7 @@
+   "private": true,
+   "name": "electron-app",
+   "version": "2.3.7",
++  "homepage": "https://arduino.cc/en/software",
+   "license": "AGPL-3.0-or-later",
+   "main": "./src-gen/backend/electron-main.js",
+   "dependencies": {
+@@ -102,7 +103,7 @@
+       }
+     }
+   },
+-  "author": "Arduino SA",
++  "author": "Arduino SA (https://arduino.cc/) <security@arduino.cc>",
+   "description": "Arduino IDE",
+   "build": {
+     "appId": "cc.arduino.IDE2",
+@@ -154,7 +155,8 @@
+     "linux": {
+       "target": [
+         "zip",
+-        "AppImage"
++        "AppImage",
++        "deb"
+       ],
+       "category": "Development",
+       "icon": "resources/icons"
