@@ -5,13 +5,14 @@ This repo contains Arduino IDE version 2.x binaries compiled for ARM64 devices (
 ## ⚠️ This is not a fork of Arduino IDE, this is only instructions to build the IDE for ARM64 platforms ⚠️ 
 
 Build requirements:
-- any ARM64 device running Debian or Raspberry Pi OS (the host can't be Ubuntu as it tends to have compiling issues) with atleast 8 GB of RAM + 3 GB swap due to webpack eating ram
+- any ARM64 device running Debian, Raspberry Pi OS or Ubuntu (ideally the newest versions) with atleast 8 GB of RAM + 3 GB swap due to webpack eating ram
 - build dependencies listed on the [git repo](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#Prerequisites)
 - golang 1.21 or newer (needed to compile arduino-language-server and arduino-cli, install instructions: https://go.dev/doc/install)
 
 Build instructions:
 1. Clone [Arduino IDE](https://github.com/arduino/arduino-ide) source (make sure you have enough space)
 2. `git apply` the `add-home-page-email-deb.diff` file to `electron-app/package.json`
+This updates the required fields to make a .deb package and updates certain dependencies (like Electron)
 3. Make sure any electron-builder prebuilt packages are ARM64 compatible 
 Typically fpm in electron-builder *is only suited for x86*, so to solve the issue to prevent further errors:
 - install fpm via gem: `fpm install fpm`
