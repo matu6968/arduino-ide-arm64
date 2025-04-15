@@ -58,3 +58,16 @@ index 774fe56b..ba52b09e 100644
        ],
        "category": "Development",
        "icon": "resources/icons"
+diff --git a/electron-app/scripts/notarize.js b/electron-app/scripts/notarize.js
+index 0a74e208..167c93cd 100644
+--- a/electron-app/scripts/notarize.js
++++ b/electron-app/scripts/notarize.js
+@@ -2,7 +2,7 @@
+ 'use strict';
+ 
+ const isCI = require('is-ci');
+-const { notarize } = require('electron-notarize');
++const { notarize } = require('@electron/notarize');
+ 
+ exports.default = async function notarizing(context) {
+   if (!isCI) {

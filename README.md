@@ -2,7 +2,7 @@
 
 This repo contains Arduino IDE version 2.x binaries compiled for ARM64 devices (such as for Raspberry Pi devices)
 
-## ⚠️ This is not a fork of Arduino IDE, this is only instructions to build the IDE for ARM64 platforms ⚠️ 
+## ⚠️  This is not a fork of Arduino IDE, this is only instructions to build the IDE for ARM64 platforms
 
 Build requirements:
 - any ARM64 device running Debian, Raspberry Pi OS or Ubuntu (ideally the newest versions) with atleast 8 GB of RAM + 3 GB swap due to webpack eating ram
