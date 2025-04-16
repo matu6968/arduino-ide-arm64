@@ -15,7 +15,7 @@ index 774fe56b..ba52b09e 100644
    },
    "devDependencies": {
 +    "7zip-min": "^2.1.0",
-+    "@electron/notarize": "^3.0.1",
++    "@electron/notarize": "^2.5.0",
      "@theia/cli": "1.57.0",
 -    "7zip-min": "^1.4.4",
      "chmodr": "^1.2.0",
