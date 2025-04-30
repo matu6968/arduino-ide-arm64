@@ -15,12 +15,11 @@ Build instructions:
 This updates the required fields to make a .deb package and updates certain dependencies (like Electron)
 3. Make sure any electron-builder prebuilt packages are ARM64 compatible 
 Typically fpm in electron-builder *is only suited for x86*, so to solve the issue to prevent further errors:
-- install fpm via gem: `fpm install fpm`
+- install fpm via gem: `fpm install fpm` [^1]
+- Set environment variable `USE_SYSTEM_FPM` to `true` [^1]
 - copy over the fpm script to the ~/.cache/electron-builder/fpm/fpm-1.9.3-2.3.1-linux-x86 (or similar) directory:
-```
-rm ~/.cache/electron-builder/fpm/fpm-1.9.3-2.3.1-linux-x86/fpm
-cp /usr/local/bin/fpm ~/.cache/electron-builder/fpm/fpm-1.9.3-2.3.1-linux-x86/fpm
-```
 4. Build using the usual commands listed in build guide in ["Build From Source"](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#build-from-source), if it failed building with SIGKILL error, increase swap/close programs (alternatively you can use this script at https://github.com/Botspot/pi-apps/issues/2585#issuecomment-2477847933 to automatically install dependencies and build the package)
 5. To build a DEB package after you patched electron-app/package.json with additional required fields, use the listed commands in section ["Bundle the Application"](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#bundle-the-application) (yarn --cwd electron-app package)
 [FAQ](https://github.com/matu6968/arduino-ide-arm64/wiki/faq)
+
+[^1]: A fix related to this is issue is based off the [electron-userland](https://github.com/electron-userland/electron-builder/issues/5154#issuecomment-815962946) issue which the enviroment flag appears to be undocumented.
