@@ -7,7 +7,7 @@ This repo contains Arduino IDE version 2.x binaries compiled for ARM64 devices (
 Build requirements:
 - any ARM64 device running Debian, Raspberry Pi OS or Ubuntu (ideally the newest versions) with atleast 8 GB of RAM + 3 GB swap due to webpack eating ram
 - build dependencies listed on the [git repo](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#Prerequisites)
-- golang 1.21 or newer (needed to compile arduino-language-server and arduino-cli, install instructions: https://go.dev/doc/install)
+- golang 1.24 or newer (needed to compile arduino-language-server and arduino-cli, install instructions: https://go.dev/doc/install)
 
 Build instructions:
 1. Clone [Arduino IDE](https://github.com/arduino/arduino-ide) source (make sure you have enough space)
@@ -15,9 +15,8 @@ Build instructions:
 This updates the required fields to make a .deb package and updates certain dependencies (like Electron)
 3. Make sure any electron-builder prebuilt packages are ARM64 compatible 
 Typically fpm in electron-builder *is only suited for x86*, so to solve the issue to prevent further errors:
-- install fpm via gem: `fpm install fpm` [^1]
+- install fpm via gem: `gem install fpm` (if required use sudo) [^1]
 - Set environment variable `USE_SYSTEM_FPM` to `true` [^1]
-- copy over the fpm script to the ~/.cache/electron-builder/fpm/fpm-1.9.3-2.3.1-linux-x86 (or similar) directory:
 4. Build using the usual commands listed in build guide in ["Build From Source"](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#build-from-source), if it failed building with SIGKILL error, increase swap/close programs (alternatively you can use this script at https://github.com/Botspot/pi-apps/issues/2585#issuecomment-2477847933 to automatically install dependencies and build the package)
 5. To build a DEB package after you patched electron-app/package.json with additional required fields, use the listed commands in section ["Bundle the Application"](https://github.com/arduino/arduino-ide/blob/main/docs/development.md#bundle-the-application) (yarn --cwd electron-app package)
 [FAQ](https://github.com/matu6968/arduino-ide-arm64/wiki/faq)

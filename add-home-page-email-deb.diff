@@ -1,23 +1,21 @@
 diff --git a/electron-app/package.json b/electron-app/package.json
-index 774fe56b..ba52b09e 100644
+index 9b8f86d2..a1a4aa87 100644
 --- a/electron-app/package.json
 +++ b/electron-app/package.json
-@@ -2,6 +2,7 @@
-   "private": true,
-   "name": "electron-app",
-   "version": "2.3.7",
-+  "homepage": "https://arduino.cc/en/software",
+@@ -4,6 +4,7 @@
+   "version": "2.3.9",
    "license": "AGPL-3.0-or-later",
    "main": "./src-gen/backend/electron-main.js",
++  "homepage": "https://arduino.cc/en/software",
    "dependencies": {
-@@ -22,22 +23,22 @@
-     "arduino-ide-extension": "2.3.7"
+     "@theia/core": "1.57.0",
+     "@theia/debug": "1.57.0",
+@@ -23,21 +24,21 @@
    },
    "devDependencies": {
-+    "7zip-min": "^2.1.0",
-+    "@electron/notarize": "^2.5.0",
      "@theia/cli": "1.57.0",
 -    "7zip-min": "^1.4.4",
++    "7zip-min": "^2.1.0",
      "chmodr": "^1.2.0",
      "compression-webpack-plugin": "^9.0.0",
      "copy-webpack-plugin": "^8.1.1",
@@ -27,6 +25,7 @@ index 774fe56b..ba52b09e 100644
 -    "electron-notarize": "^1.1.1",
 +    "electron": "^31.7.7",
 +    "electron-builder": "^25.1.8",
++    "@electron/notarize": "^2.5.0",
      "execa": "^7.1.1",
      "file-type": "^18.5.0",
      "glob": "^10.3.3",
@@ -48,16 +47,16 @@ index 774fe56b..ba52b09e 100644
    "description": "Arduino IDE",
    "build": {
      "appId": "cc.arduino.IDE2",
-@@ -154,7 +155,8 @@
+@@ -156,7 +157,8 @@
      "linux": {
        "target": [
          "zip",
 -        "AppImage"
 +        "AppImage",
-+        "deb"
++	"deb"
        ],
        "category": "Development",
-       "icon": "resources/icons"
+       "icon": "resources/icons",
 diff --git a/electron-app/scripts/notarize.js b/electron-app/scripts/notarize.js
 index 0a74e208..167c93cd 100644
 --- a/electron-app/scripts/notarize.js
@@ -71,3 +70,16 @@ index 0a74e208..167c93cd 100644
  
  exports.default = async function notarizing(context) {
    if (!isCI) {
+diff --git a/package.json b/package.json
+index 433b72c3..61e20f1c 100644
+--- a/package.json
++++ b/package.json
+@@ -7,7 +7,7 @@
+   "license": "AGPL-3.0-or-later",
+   "private": true,
+   "engines": {
+-    "node": ">=18.17.0 <21"
++    "node": ">=18.17.0 <24"
+   },
+   "resolutions": {
+     "@theia/cli/@babel/traverse": "^7.23.2",
